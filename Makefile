@@ -18,7 +18,7 @@ include $(INCLUDE_DIR)/package.mk
 define KernelPackage/rtl8852au
   SUBMENU:=Wireless Drivers
   TITLE:=Realtek RTL8852AU / RTL8832AU support (out-of-tree)
-  DEPENDS:=+kmod-cfg80211 +@DRIVER_11N_SUPPORT +@DRIVER_11AC_SUPPORT +@DRIVER_11AX_SUPPORT
+  DEPENDS:=+kmod-usb-core +kmod-cfg80211 +@DRIVER_11N_SUPPORT +@DRIVER_11AC_SUPPORT +@DRIVER_11AX_SUPPORT
   FILES:=\
 	$(PKG_BUILD_DIR)/8852au.ko
   AUTOLOAD:=$(call AutoProbe,8852au)
